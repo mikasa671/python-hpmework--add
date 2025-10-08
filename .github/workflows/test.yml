@@ -1,0 +1,13 @@
+name: 测试两数相加功能
+on: [push]  # 代码推送时自动触发测试
+jobs:
+  test:
+    runs-on: ubuntu-latest  # 运行环境
+    steps:
+      - uses: actions/checkout@v4  # 拉取仓库代码
+      - name: 设置Python环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'  # 你的Python版本（如3.9、3.10等）
+      - name: 运行代码测试
+        run: python add.py  # 执行你的add.py脚本
